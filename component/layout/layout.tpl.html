@@ -1,0 +1,280 @@
+<nav class="navbar-default" role="navigation" style="padding-bottom: 0">
+    <div class="row" style="height: inherit">
+        <div class="col-sm-3" style="height: 100%">
+            <div class="navbar-header">
+            <img class="navbar-brand" src="resources/images/PostKo-01.svg" style="height: 200px;width: auto; padding-top: 5px; padding-bottom: 0; margin-top: -50px; margin-bottom: -100px ">
+            </div>
+        </div>
+
+        <div class="col-sm-9" style="height: 100%; padding-left: 0;">
+            <!-- Search/Login -->
+            <div class="row" style="height: 100%; margin-right: 10px; margin-top: 10px;">
+                <div class="collapse navbar-collapse" style="padding-right: 0;">
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--<li><p class="navbar-text">Already have an account?</p></li>-->
+                        <!--<li><a ui-sref="yixue.auth({type:'signup'})">Sign up</a></li>-->
+                        <li><a data-ng-click="openLoginModal()">Login | Sign up</a></li>
+                    </ul>
+
+                    <!--<form class="navbar-form navbar-right" role="search">-->
+                        <!--<div class="form-group">-->
+                            <!--<input type="text" class="form-control" placeholder="Search">-->
+                        <!--</div>-->
+                        <!--<button type="submit" class="btn btn-default"><i class="fa fa-search"></i> Submit</button>-->
+                    <!--</form>-->
+                </div>
+            </div>
+
+            <!-- Menu Tabs -->
+            <div class="row" style="height: 100%; margin-right: 10px">
+                <div class="tabs tabs-style-bar" >
+                    <nav>
+                        <ul style="margin-right: 0px">
+                            <li class="menuTab menuTab-current"><a ui-sref="postko.home" class="icon icon-home"><span>Home</span></a></li>
+                            <!--<li class="menuTab"><a ui-sref="postko.products" class="icon icon-box"><span>How it Works</span></a></li>-->
+                            <li class="menuTab"><a ui-sref="postko.fly" class="icon icon-plane"><span>Flyers</span></a></li>
+                            <li class="menuTab"><a ui-sref="postko.ship" class="icon icon-box"><span>Shippers</span></a></li>
+                            <li class="menuTab"><a ui-sref="postko.corporate" class="icon icon-tools"><span>Corporate</span></a></li>
+                            <li class="menuTab"><a ui-sref="postko.faq" class="icon icon-config"><span>FAQ</span></a></li>
+                        </ul>
+                    </nav>
+                </div><!-- /tabs -->
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="modal fade" id="loginModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="border-bottom: 0px">
+                <button type="button" class="close" data-dismiss="modal" style="color: black">&times;</button>
+                <div class="tabs tabs-style-underline">
+                    <nav>
+                        <ul>
+                            <li class="authTabs tab-current"><a data-toggle="tab" href="#loginTab"><i class="fa fa-sign-in"></i><span> Sign in</span></a></li>
+                            <li class="authTabs"><a data-toggle="tab" href="#signupTab"><i class="fa fa-address-card"></i><span> Register</span></a></li>
+                        </ul>
+                    </nav>
+                </div><!-- /tabs -->
+            </div>
+
+            <div class="modal-body" style="text-align: left">
+                <div class="tab-content">
+                    <div id="loginTab" class="tab-pane active" role="tabpanel">
+                        <div id="login" class="row">
+                            <div class="col-sm-6">
+                                <div style="align-content: center">
+                                    <div class="form-group">
+                                        <label for="loginEmail">Email:</label>
+                                        <input id="loginEmail" type="email"
+                                               class="form-control"
+                                               placeholder="Username/Email/QQ/WeChat" style="margin-bottom: 5px"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <a class="pull-right" href="#" data-ng-click="forgotPass()" style="font-size: smaller; color: #2e6da4">Forgot password?</a>
+                                        <label for="loginPassword">Password:</label>
+                                        <input id="loginPassword" type="password"
+                                               class="form-control"
+                                               placeholder="Password" style="margin-bottom: 0; padding-bottom: 4px"/>
+                                    </div>
+                                    <div class="checkbox pull-left">
+                                        <label>
+                                            <input type="checkbox">
+                                            Remember me </label>
+                                    </div>
+                                    <button id='startRecordBtn'  data-ng-click="" type="button" class="btn btn-primary pull-right"><i class=""></i>Login</button>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-sm-offset-1">
+                                <div style="text-align: center">
+                                    <h5 style="margin-bottom: 5px;">
+                                        Login with WeChat ID
+                                    </h5>
+                                    <a href="https://evertrust.ca:2083/"><img src="resources/images/evertrustQR.jpg" alt="Wechat QR Code" style="width:60%;height:60%;"></a>
+                                </div>
+                                <div style="text-align: center">
+                                    <a style="font-size: smaller; color: #2e6da4">Use Wechat QR Scanner</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="forgotPass" style="display: none">
+                            <div class="row">
+                                <h4 style="text-align: center">Forgot Password</h4>
+                                <form id="forgorPassFrom">
+                                    <fieldset class="col-sm-8 col-sm-offset-2">
+                                        <section>
+                                            <label for="forgotPassUser">Enter your Username:</label>
+                                            <input id="forgotPassUser" type="text"
+                                                   class="form-control"
+                                                   placeholder="Username/Email/QQ/WeChat" style="margin-bottom: 5px"/>
+                                        </section>
+
+                                        <section style="margin-top: -5px; margin-bottom: -5px">
+                                            <span class="timeline-seperator text-center text-primary"> <span class="font-sm">OR</span> </span>
+                                        </section>
+
+                                        <section>
+                                            <label for="forgotPassEmail">Enter your Email:</label>
+                                            <input id="forgotPassEmail" type="email"
+                                                   class="form-control"
+                                                   placeholder="Email Address" style="margin-bottom: 5px"/>
+                                        </section>
+                                        <section style="text-align: center">
+                                            <button type="submit" class="btn btn-primary" data-ng-click="sendResetEmail()" style="margin-top: 10px;">
+                                                <i class="fa fa-refresh"></i> Reset Password
+                                            </button>
+                                        </section>
+                                    </fieldset>
+                                </form>
+
+                            </div>
+                        </div>
+
+                        <div id="postReset" style="display: none">
+                            <div class="row" style="text-align: center">
+                                <div class="col-sm-10 col-sm-offset-1">
+                                    <h5>Password Recovery Email Sent</h5>
+                                    <p>
+                                        Please follow the instructions sent to the email that is tied with the account and reset
+                                        your password.
+                                    </p>
+
+                                    <button data-ng-click="goBackLogin()" type="submit" class="btn btn-primary" style="margin-top: 10px;">
+                                        <i class="fa fa-refresh"></i> Okay
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="signupTab" class="tab-pane" role="tabpanel">
+                        <div class="row">
+                            <form id="registerFrom">
+                                <fieldset class="col-sm-6">
+                                    <section>
+                                        <label for="signupUsername">Username:</label>
+                                        <input id="signupUsername" type="text"
+                                               class="form-control"
+                                               placeholder="Username/Email/QQ/WeChat" style="margin-bottom: 5px"/>
+                                    </section>
+
+                                    <section>
+                                        <label for="signupEmail">Email:</label>
+                                        <input id="signupEmail" type="email"
+                                               class="form-control"
+                                               placeholder="Email Address" style="margin-bottom: 5px"/>
+                                    </section>
+
+                                    <section>
+                                        <label for="signupPassword">Password:</label>
+                                        <input id="signupPassword" type="password"
+                                               class="form-control"
+                                               placeholder="Password" style="margin-bottom:5px"/>
+                                    </section>
+
+                                    <section>
+                                        <label for="confirmPassword">Confirm Password:</label>
+                                        <input id="confirmPassword" type="password"
+                                               class="form-control"
+                                               placeholder="Confirm Password" style="margin-bottom: 5px"/>
+                                    </section>
+                                </fieldset>
+
+                                <fieldset class="col-sm-6">
+                                    <div class="row">
+                                        <section class="col-sm-6">
+                                            <label for="signupFirstName">First Name:</label>
+                                            <input id="signupFirstName" type="text"
+                                                   class="form-control"
+                                                   placeholder="(optional)" style="margin-bottom: 5px"/>
+                                        </section>
+                                        <section class="col-sm-6">
+                                            <label for="signupLastName">Last Name:</label>
+                                            <input id="signupLastName" type="text"
+                                                   class="form-control"
+                                                   placeholder="(optional)" style="margin-bottom: 5px"/>
+                                        </section>
+                                    </div>
+
+                                    <div class="row">
+                                        <section class="col-sm-6">
+                                            <label for="aType">Account</label>
+                                            <select class="form-control" id="aType" style="-webkit-border-radius: 0px">
+                                                <option value="0" selected="" disabled="">Type</option>
+                                                <option value="1">Student</option>
+                                                <option value="2">Mentor</option>
+                                            </select>
+                                        </section>
+
+                                        <section class="col-sm-6">
+                                            <label for="gender">Gender</label>
+                                            <select class="form-control" id="gender" style="border-radius: 0">
+                                                <option value="0" selected="" disabled="">Gender</option>
+                                                <option value="1">Male</option>
+                                                <option value="2">Female</option>
+                                                <option value="3">Prefer not to answer</option>
+                                            </select>
+                                        </section>
+                                    </div>
+
+                                    <div class="row">
+                                        <section class="col-sm-11 col-lg-offset-1" style="align-items: center">
+                                            <label class="checkbox">
+                                                <input type="checkbox" name="subscription" id="subscription">
+                                                <i></i>I want to receive news</label>
+                                            <label class="checkbox">
+                                                <input type="checkbox" name="terms" id="terms">
+                                                <i></i>I agree with the <a> Terms and Conditions </a></label>
+                                        </section>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary pull-right" style="margin-top: 10px; width: 30%">
+                                        Register
+                                    </button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <h5 class="text-center"> - Or sign in using -</h5>
+
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="javascript:void(0);" class="btn btn-primary btn-circle"><i class="fa fa-facebook-official"></i></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="btn btn-info btn-circle"><i class="fa fa-google"></i></a>
+                    </li>
+                    <!--<li>-->
+                        <!--<a href="javascript:void(0);" class="btn btn-warning btn-circle"><i class="fa fa-weibo"></i></a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="javascript:void(0);" class="btn btn-warning btn-circle"><i class="fa fa-tencent-weibo"></i></a>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+        </div>
+        <!-- Modal content-->
+    </div>
+</div>
+
+<div data-smart-router-animation-wrap="content content@postko" data-wrap-for="#content">
+    <div id ="postkoContent" data-ui-view="content" data-autoscroll="false"></div>
+</div>
+
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="footer-btm">
+                    <span>&copy; Copyright 2017. PostKo International Inc.</span>
+                </div>
+            </div>
+        </div><!--footer btm-->
+    </div>
+</footer><!--footer end-->
+<!--scripts and plugins -->
