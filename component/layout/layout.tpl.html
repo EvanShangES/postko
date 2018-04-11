@@ -83,7 +83,7 @@
                                             <input type="checkbox">
                                             Remember me </label>
                                     </div>
-                                    <button id='startRecordBtn'  data-ng-click="" type="button" class="btn btn-primary pull-right"><i class=""></i>Login</button>
+                                    <button ui-sref="postko.flyerHome"  data-ng-click="" type="button" class="btn btn-primary pull-right"><i class=""></i>Login</button>
                                 </div>
                             </div>
                             <div class="col-sm-5 col-sm-offset-1">
@@ -91,7 +91,7 @@
                                     <h5 style="margin-bottom: 5px;">
                                         Login with WeChat ID
                                     </h5>
-                                    <a href="https://evertrust.ca:2083/"><img src="resources/images/evertrustQR.jpg" alt="Wechat QR Code" style="width:60%;height:60%;"></a>
+                                    <a><img src="resources/images/postkoQR.png" alt="Wechat QR Code" style="width:60%;height:60%;"></a>
                                 </div>
                                 <div style="text-align: center">
                                     <a style="font-size: smaller; color: #2e6da4">Use Wechat QR Scanner</a>
@@ -203,8 +203,8 @@
                                             <label for="aType">Account</label>
                                             <select class="form-control" id="aType" style="-webkit-border-radius: 0px">
                                                 <option value="0" selected="" disabled="">Type</option>
-                                                <option value="1">Student</option>
-                                                <option value="2">Mentor</option>
+                                                <option value="1">Flyer</option>
+                                                <option value="2">Ambassador</option>
                                             </select>
                                         </section>
 
@@ -229,7 +229,7 @@
                                                 <i></i>I agree with the <a> Terms and Conditions </a></label>
                                         </section>
                                     </div>
-                                    <button type="submit" class="btn btn-primary pull-right" style="margin-top: 10px; width: 30%">
+                                    <button ui-sref="postko.flyerHome" type="submit" class="btn btn-primary pull-right" style="margin-top: 10px; width: 30%">
                                         Register
                                     </button>
                                 </fieldset>

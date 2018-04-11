@@ -22,6 +22,7 @@ var $components = [
     'postko.layout',
     'postko.home',
     'postko.fly',
+    'postko.flyerHome',
     'postko.ship',
     'postko.corporate',
     'postko.about',

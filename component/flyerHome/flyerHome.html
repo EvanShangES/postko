@@ -1,0 +1,124 @@
+<!-- MultiStep Form -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <form id="msform">
+                <!-- progressbar -->
+                <ul id="progressbar">
+                    <li class="active">Departure</li>
+                    <li>Arrivals</li>
+                    <li>Airline</li>
+                    <li>Checked Bags</li>
+                    <li>Files</li>
+                    <li>Confirmation</li>
+                </ul>
+                <!-- fieldsets -->
+                <fieldset>
+                    <h2 class="fs-title">Departure</h2>
+                    <h3 class="fs-subtitle">Tell us something more about you</h3>
+                    <input type="text" name="departure_airport" placeholder="Departing Airport"/>
+                    <input type="text" name="departure_date" placeholder="Date of Departure"/>
+                    <input type="text" name="departure_time" placeholder="Time of Departure"/>
+                    <input type="button" name="next" class="next action-button" value="Next"/>
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">Arival</h2>
+                    <h3 class="fs-subtitle">Your presence on the social network</h3>
+                    <input type="text" name="arrival_airport" placeholder="Arrival Airport"/>
+                    <input type="text" name="arrival_date" placeholder="Date of Arrival"/>
+                    <input type="text" name="arrival_time" placeholder="Time of Arrival"/>
+                    <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                    <input type="button" name="next" class="next action-button" value="Next"/>
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">Airlines</h2>
+                    <!--<h3 class="fs-subtitle">Is this a Direct Flight</h3>-->
+                    <div>
+                        <label>Is this a direct flight?</label>
+                        <br>
+                        <label class="radio-inline">
+                            <input type="radio" name="direct_flight"> Yes
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="direct_flight"> No
+                        </label>
+                    </div>
+                    <div class="row" style="border: 1px black">
+                        <div class="col-md-12">
+                            <h2 class="fs-title">Flight # 1</h2>
+                        </div>
+
+                        <div class="col-md-6 pull-left">
+                            <h2 class="fs-title">Departure Airport</h2>
+                            <h2 class="fs-title" style="font-size: 15px">Toronto - YYZ</h2>
+
+
+                        </div>
+                        <div class="col-md-6 pull-left">
+                            <h2 class="fs-title">Arrival Airport</h2>
+                            <h2 class="fs-title" style="font-size: 15px">Beijing - PEK</h2>
+                        </div>
+                        <hr style="border-bottom: 1px black">
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email">Airline:</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Departure Date:</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Departure Time:</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email">Flight Number:</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Confirmation Code:</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                    <input type="button" name="next" class="next action-button" value="Next"/>
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">Checked Bags</h2>
+                    <h3 class="fs-subtitle">Fill in your credentials</h3>
+                    <input type="text" name="email" placeholder="Email"/>
+                    <input type="password" name="pass" placeholder="Password"/>
+                    <input type="password" name="cpass" placeholder="Confirm Password"/>
+                    <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                    <input type="button" name="next" class="next action-button" value="Next"/>
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">Files</h2>
+                    <h3 class="fs-subtitle">Fill in your credentials</h3>
+                    <input type="text" name="email" placeholder="Email"/>
+                    <input type="password" name="pass" placeholder="Password"/>
+                    <input type="password" name="cpass" placeholder="Confirm Password"/>
+                    <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                    <input type="button" name="next" class="next action-button" value="Next"/>
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">Confirmation</h2>
+                    <h3 class="fs-subtitle">Fill in your credentials</h3>
+                    <input type="text" name="email" placeholder="Email"/>
+                    <input type="password" name="pass" placeholder="Password"/>
+                    <input type="password" name="cpass" placeholder="Confirm Password"/>
+                    <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                    <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+                </fieldset>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
+<!-- /.MultiStep Form -->
