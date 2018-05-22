@@ -19,8 +19,8 @@ var $dependencies = [
 ];
 
 var $components = [
-    // 'postko.login',
-    // 'postko.register'
+    'postko.login',
+    'postko.signup'
     // 'mrbaffo.user',
     // 'mrbaffo.user.account',
     // 'mrbaffo.user.order',
