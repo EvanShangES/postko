@@ -19,15 +19,21 @@ var $dependencies = [
 ];
 
 var $components = [
-    'postko.layout',
-    'postko.home',
-    'postko.fly',
-    'postko.flyerHome',
-    'postko.ship',
-    'postko.corporate',
-    'postko.about',
-    //'postko.support',
-    'postko.faq'
+    'postko.login',
+    'postko.register'
+    // 'mrbaffo.user',
+    // 'mrbaffo.user.account',
+    // 'mrbaffo.user.order',
+    // 'mrbaffo.user.referral'
+    // // 'postko.layout',
+    // 'postko.home',
+    // 'postko.flyer',
+    // 'postko.flyerHome',
+    // 'postko.shipper',
+    // // 'postko.corporate',
+    // 'postko.about',
+    // //'postko.support',
+    // 'postko.faq'
     //'postko.quote'
     //'yixue.auth',
     //'yixue.start_here'
