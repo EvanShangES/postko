@@ -64,45 +64,59 @@ postko.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
 });
 
-mrbaffo.run(function($rootScope, $transitions, $http, APP_CONFIG, $state){
+postko.run(function($rootScope, $http, APP_CONFIG, $state){
     $rootScope.loggedIn = null;
     $rootScope.currentState = null;
     $rootScope.userInfo = {};
 
-    $transitions.onStart({}, function(transition) {
+    // $transitions.onStart({}, function(transition) {
+    //     var req = {
+    //         method: 'GET',
+    //         url: APP_CONFIG.apiUrl + '/loggedIn'
+    //     };
+    //
+    //     $http(req).then(function(res) {
+    //         $rootScope.loggedIn = res.data;
+    //         console.log($rootScope.loggedIn);
+    //
+    //         if(transition.to().name.split('.')[0] === 'user' && !$rootScope.loggedIn){
+    //             $state.transitionTo('home');
+    //         }
+    //
+    //         if(transition.to().name === 'home.login' && $rootScope.loggedIn){
+    //             $state.transitionTo('home');
+    //         }
+    //
+    //         if(transition.to().name === 'home.register' && $rootScope.loggedIn){
+    //             $state.transitionTo('home');
+    //         }
+    //     });
+    //
+    //     $rootScope.currentState = transition.to().name.split('.')[0];
+    //
+    //     console.log($rootScope.currentState);
+    //
+    //     console.log(
+    //         "Successful Transition from " + transition.from().name +
+    //         " to " + transition.to().name
+    //     );
+    // });
+
+    $rootScope.signup = function (user){
         var req = {
-            method: 'GET',
-            url: APP_CONFIG.apiUrl + '/loggedIn'
+            method: 'POST',
+            url: APP_CONFIG.apiUrl + '/register',
+            data: user
         };
 
-        $http(req).then(function(res) {
-            $rootScope.loggedIn = res.data;
-            console.log($rootScope.loggedIn);
+        $http(req).then(function(res){
+            console.log(res);
 
-            if(transition.to().name.split('.')[0] === 'user' && !$rootScope.loggedIn){
-                $state.transitionTo('home');
-            }
 
-            if(transition.to().name === 'home.login' && $rootScope.loggedIn){
-                $state.transitionTo('home');
-            }
-
-            if(transition.to().name === 'home.register' && $rootScope.loggedIn){
-                $state.transitionTo('home');
-            }
-        });
-
-        $rootScope.currentState = transition.to().name.split('.')[0];
-
-        console.log($rootScope.currentState);
-
-        console.log(
-            "Successful Transition from " + transition.from().name +
-            " to " + transition.to().name
-        );
-    });
-
-    $rootScope.apiUrl = "http://localhost:8080";
+            $state.go('home.login', {email: res.data.user.profile.email});
+            // $state.transitionTo('home.login', {email: res.data.user.local.email});
+        })
+    };
 
     $rootScope.login = function (user){
         var req = {

@@ -1,59 +1,4 @@
-<div class="row" id="registerStep1" hidden>
-    <div class="col-md-12" style="text-align: center">
-        <h1>Get Started! No Credit Card Required</h1>
-        <h3>Let’s check if you are in the delivery area before we begin! </h3>
-    </div>
-
-    <div class="col-md-12" style="padding-top: 20px">
-        <div class="col-md-4 col-md-offset-2" style="text-align: center">
-            <a href="https://www.google.com/maps/d/viewer?mid=12C5zBe4iWKef96JDFN4zxoZcC3U&ll=43.655682131005705%2C-79.38867690000001&z=14">
-                <img src="resources/images/signup-map.png" style="width: 80%; height: auto">
-            </a>
-        </div>
-        <div class="col-md-4">
-            <div style="align-content: center">
-                <div class="form-group">
-                    <label for="loginEmail">Email:</label>
-                    <input id="loginEmail" type="email"
-                           class="form-control"
-                           placeholder="Email" style="margin-bottom: 5px"/>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-8" style="padding: 0 10px 15px 0">
-                        <label for="initAddress">Address:</label>
-                        <input id="initAddress" type="text"
-                               class="form-control"
-                               placeholder="Address" style="margin-bottom: 0; padding-bottom: 4px"/>
-                    </div>
-                    <div class="col-md-4" style="padding: 0 0 15px 0">
-                        <label for="initUnit">Unit:</label>
-                        <input id="initUnit" type="text"
-                               class="form-control"
-                               placeholder="Unit No." style="margin-bottom: 0; padding-bottom: 4px"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="initCity">City:</label>
-                    <input id="initCity" type="text"
-                           class="form-control"
-                           placeholder="City" style="margin-bottom: 5px"/>
-                </div>
-                <div class="form-group">
-                    <label for="initPostal">Postal Code:</label>
-                    <input id="initPostal" type="text"
-                           class="form-control"
-                           placeholder="Postal Code" style="margin-bottom: 5px"/>
-                </div>
-
-                <button data-ng-click="" type="button" class="btn btn-primary" style="width: 100%"><i class=""></i>Register</button>
-                <hr>
-                <button ui-sref="home.login" type="button" class="btn btn-success" style="width: 100%"><i class=""></i>Login</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row" id="registerStep2">
+<div class="row" id="registerForm">
     <div class="col-md-12" style="text-align: center">
         <h1>Thank you!</h1>
         <h3>There are only a few more steps left to complete your profile.</h3>
@@ -61,7 +6,7 @@
 
     <div class="col-md-12" style="padding-top: 20px">
         <div class="col-md-4 col-md-offset-2" style="text-align: center">
-            <img src="resources/images/laundry_machine.png" style="width: 80%; height: auto">
+            <img src="" style="width: 80%; height: auto">
         </div>
         <div class="col-md-4">
             <div style="align-content: center">
@@ -111,13 +56,13 @@
                 </div>
 
                     <div class="form-group">
-                    <label for="initReferral">Referral Code (Optional):</label>
+                    <label for="initReferral">WeChat Handle(Optional):</label>
                     <input id="initReferral" type="text"
                            class="form-control"
-                           placeholder="Referral Code" ng-model="init.referral" style="margin-bottom: 5px"/>
+                           placeholder="Referral Code" ng-model="init.wechat" style="margin-bottom: 5px"/>
                 </div>
 
-                    <button data-ng-click="register(init)" ng-disabled="validation" type="button" class="btn btn-primary" style="width: 100%"><i class=""></i>Sign up!</button>
+                    <button data-ng-click="signup(init)" ng-disabled="validation" type="button" class="btn btn-primary" style="width: 100%"><i class=""></i>Sign up!</button>
                     <!--<button ui-sref="user" type="button" class="btn btn-primary" style="width: 100%"><i class=""></i>Register</button>-->
                 </form>
             </div>

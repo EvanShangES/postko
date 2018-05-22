@@ -7,28 +7,28 @@ angular.module('postko.signup').controller('signupController', function(APP_CONF
         email: null,
         password: null,
         confirmPassword: null,
-        referral: null
+        wechat: null
     };
 
-    $scope.$watch('init.email', function(){
-        if($scope.init.email != null && $scope.init.email !== "") {
-            var valid = validateEmail($scope.init.email);
-            if (valid) {
-                var req = {
-                    method: 'GET',
-                    url: APP_CONFIG.apiUrl + '/email/' + $scope.init.email
-                };
-                $http(req).then(function(res) {
-                    console.log(res);
-                    if(!res.data){
-                        document.getElementById("initEmail").style.borderColor = "green";
-                    }
-                });
-            }
-                document.getElementById("initEmail").style.borderColor = "red";
-
-        }
-    });
+    // $scope.$watch('init.email', function(){
+    //     if($scope.init.email != null && $scope.init.email !== "") {
+    //         var valid = validateEmail($scope.init.email);
+    //         if (valid) {
+    //             var req = {
+    //                 method: 'GET',
+    //                 url: APP_CONFIG.apiUrl + '/email/' + $scope.init.email
+    //             };
+    //             $http(req).then(function(res) {
+    //                 console.log(res);
+    //                 if(!res.data){
+    //                     document.getElementById("initEmail").style.borderColor = "green";
+    //                 }
+    //             });
+    //         }
+    //             document.getElementById("initEmail").style.borderColor = "red";
+    //
+    //     }
+    // });
 
     function validateEmail(email) {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -89,27 +89,27 @@ angular.module('postko.signup').controller('signupController', function(APP_CONF
     });
 
 
-    $scope.register = function(newUser){
-        var req = {
-            method: 'POST',
-            url: APP_CONFIG.apiUrl + '/register',
-            data: newUser
-        };
-
-        $http(req).then(function(res){
-            console.log(res);
-
-            // var req = {
-            //     method: 'POST',
-            //     url: apiUrl + '/api/login',
-            //     data: res.user
-            // };
-
-
-            $state.go('home.login', {email: res.data.user.profile.email});
-            // $state.transitionTo('home.login', {email: res.data.user.local.email});
-        })
-    };
+    // $scope.register = function(newUser){
+    //     var req = {
+    //         method: 'POST',
+    //         url: APP_CONFIG.apiUrl + '/register',
+    //         data: newUser
+    //     };
+    //
+    //     $http(req).then(function(res){
+    //         console.log(res);
+    //
+    //         // var req = {
+    //         //     method: 'POST',
+    //         //     url: apiUrl + '/api/login',
+    //         //     data: res.user
+    //         // };
+    //
+    //
+    //         $state.go('home.login', {email: res.data.user.profile.email});
+    //         // $state.transitionTo('home.login', {email: res.data.user.local.email});
+    //     })
+    // };
 });
 
 // angular.module('registerService', []).factory('Nerd', ['$http', function($http) {

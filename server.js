@@ -35,9 +35,9 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// require('./app/config/passport')(passport); // pass passport for configuration
+require('./app/config/passport')(passport); // pass passport for configuration
 // routes ======================================================================
-// require('./app/routes/api')(app, passport); // load our routes and pass in our app and fully configured passport
+require('./app/routes/api')(app, passport); // load our routes and pass in our app and fully configured passport
 
 app.get('*', function(req, res){
     res.sendFile(path.join(__dirname + '/public/index.html'));
