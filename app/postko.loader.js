@@ -44,7 +44,8 @@ function preloadComponents($appId, components) {
     for (var i = 0; i < components.length; i++) {
         var packageName = components[i].replace($SmartAdmin, 'common');
         var component = packageName.replace($appId + '.', '').toLowerCase().split('.');
-        var path = "component/" + component[0];
+        var path = "components/" + component[0];
+        console.log(component[0]);
 
         if(component.length > 1){
             $scriptArray.push(path + "/" + component[1] + "/" + component[1] + ".js");
