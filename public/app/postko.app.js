@@ -64,7 +64,7 @@ postko.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
 });
 
-postko.run(function($rootScope, $http, APP_CONFIG, $state){
+postko.run(function($rootScope, $http, $transitions, APP_CONFIG, $state){
     $rootScope.loggedIn = null;
     $rootScope.currentState = null;
     $rootScope.userInfo = {};

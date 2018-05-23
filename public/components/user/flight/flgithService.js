@@ -1,4 +1,4 @@
-angular.module('postko.flyerHome').controller('flyerHomeController', function(){
+angular.module('postko.user.flight').controller('flightController', function(){
 
 //jQuery time
     var current_fs, next_fs, previous_fs; //fieldsets

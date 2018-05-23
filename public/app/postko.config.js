@@ -22,7 +22,11 @@ var $dependencies = [
 
 var $components = [
     'postko.login',
-    'postko.signup'
+    'postko.signup',
+    'postko.user',
+    // 'postko.user.account',
+    'postko.user.flight',
+    // 'postko.user.'
     // 'mrbaffo.user',
     // 'mrbaffo.user.account',
     // 'mrbaffo.user.order',
